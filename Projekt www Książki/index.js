@@ -99,17 +99,16 @@ const books = [
     searchForm.addEventListener('submit', (event) => {
         event.preventDefault();
         console.log(inputSearch.value);
-        inputSearch.value = '';
 
-        const filteredList = (collection) => {
+
+        const filteredList = (collection, phrase) => {
             return collection.filter(element => {
-                return element.title.includes(inputSearch.value);
+                return element.title.includes(phrase);
             });
         }
-        filteredList(inputSearch.value);
-
-        const showFilteredList = (filteredList) => {
-            return filteredList.forEach(element => {    
+        const showFilteredArray = filteredList(books, inputSearch.value);//tablica z przefiltrowanymi tytułami
+        console.log(showFilteredArray);//zwraca tablicę obiektów w konsoli
+        showFilteredArray.forEach(element => {    
                 list.innerHTML += 
                 `
                 <div class="container">
@@ -127,8 +126,8 @@ const books = [
                     </div>
                         
                 </div>`;
-            });
-        } 
+        });
+         
     })
 
     
