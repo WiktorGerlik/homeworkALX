@@ -67,26 +67,73 @@ const books = [
   ];
 
   const list = document.querySelector('#list');
-  const inputSearch = document.querySelector('#inputSearch');
-  const btnSearch = document.querySelector('#btnSearch');
 
-  let showEntireList = books.forEach(book => {
+  const showEntireList = (collection) => {
+    return collection.forEach(element => {
     list.innerHTML += 
     `
     <div class="container">
         <div class="container">
-            <img class="description" src=${book.image} alt=${book.alt}>
+            <img class="description" src=${element.image} alt=${element.alt}>
         </div>
         <div class="container_columns">
-            <p class="description">TYTUŁ:</br> ${book.title}</p>
+            <p class="description">TYTUŁ:</br> ${element.title}</p>
                
-            <p class="description">ROK:</br> ${book.year}</p>
+            <p class="description">ROK:</br> ${element.year}</p>
               
-            <p class="description">KATEGORIA:</br> ${book.category}</p>
+            <p class="description">KATEGORIA:</br> ${element.category}</p>
                
-            <p class="description">AUTOR:</br> ${book.author}</p>
+            <p class="description">AUTOR:</br> ${element.author}</p>
         </div>
             
     </div>`;
     })
+} 
+
+    // showEntireList (books);
+
+    const searchForm = document.querySelector('#form');
+    const inputSearch = document.querySelector('#inputSearch');
+    
+
+    searchForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        console.log(inputSearch.value);
+        inputSearch.value = '';
+
+        const filteredList = (collection) => {
+            return collection.filter(element => {
+                return element.title.includes(inputSearch.value);
+            });
+        }
+        filteredList(inputSearch.value);
+
+        const showFilteredList = (filteredList) => {
+            return filteredList.forEach(element => {    
+                list.innerHTML += 
+                `
+                <div class="container">
+                    <div class="container">
+                        <img class="description" src=${element.image} alt=${element.alt}>
+                    </div>
+                    <div class="container_columns">
+                        <p class="description">TYTUŁ:</br> ${element.title}</p>
+                        
+                        <p class="description">ROK:</br> ${element.year}</p>
+                        
+                        <p class="description">KATEGORIA:</br> ${element.category}</p>
+                        
+                        <p class="description">AUTOR:</br> ${element.author}</p>
+                    </div>
+                        
+                </div>`;
+            });
+        } 
+    })
+
+    
+    
+    
+    
+
     
