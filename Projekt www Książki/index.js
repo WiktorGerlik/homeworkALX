@@ -95,9 +95,15 @@ const books = [
     const searchForm = document.querySelector('#form');
     const inputSearch = document.querySelector('#inputSearch');
     
-
     searchForm.addEventListener('submit', (event) => {
         event.preventDefault();
+
+        const allShownSelect = list.querySelectorAll('div');
+
+        allShownSelect.forEach(element => {
+            element.remove();
+        });
+
         console.log(inputSearch.value);
 
 
@@ -127,7 +133,7 @@ const books = [
                         
                 </div>`;
         });
-         
+        inputSearch.value = ""; 
     })
 
     
