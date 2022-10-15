@@ -1,6 +1,6 @@
 const books = [
     {
-        title: 'BAŚNIOWA OPOWIEŚĆ',
+        title: 'baśniowa opowieść',
         year: '2022',
         category: 'fantasy',
         image: "https://ecsmedia.pl/c/basniowa-opowiesc-w-iext117122105.jpg",
@@ -8,7 +8,7 @@ const books = [
         author: "Stephen King"
     },
     {
-        title: 'The Atlas Six',
+        title: 'the atlas six',
         year: '2022',
         category: 'fantasy',
         image: "https://ecsmedia.pl/c/the-atlas-six-w-iext120077424.jpg",
@@ -16,7 +16,7 @@ const books = [
         author: "Olivie Blake"
     },
     {
-        title: 'Krew i popiół',
+        title: 'krew i popiół',
         year: '2022',
         category: 'fantasy',
         image: "https://ecsmedia.pl/c/krew-i-popiol-tom-1-w-iext115531667.jpg",
@@ -24,7 +24,7 @@ const books = [
         author: "Armentrout Jennifer L."
     },
     {
-        title: 'Hobbit',
+        title: 'hobbit',
         year: '2014',
         category: 'fantasy',
         image: "https://ecsmedia.pl/c/hobbit-w-iext117197058.jpg",
@@ -32,7 +32,7 @@ const books = [
         author: "Tolkien John Ronald Reuel"
     },
     {
-        title: 'Zbigniew Ziobro. Prawdziwe oblicze',
+        title: 'zbigniew ziobro. prawdziwe oblicze',
         year: '2022',
         category: 'biografie',
         image: "https://ecsmedia.pl/c/zbigniew-ziobro-prawdziwe-oblicze-w-iext119920880.jpg",
@@ -40,7 +40,7 @@ const books = [
         author: "Renata Grochal"
     },
     {
-        title: 'Jan Borysewicz. Mniej obcy',
+        title: 'jan borysewicz. mniej obcy',
         year: '2022',
         category: 'biografie',
         image: "https://ecsmedia.pl/c/jan-borysewicz-mniej-obcy-w-iext119879444.jpg",
@@ -48,7 +48,7 @@ const books = [
         author: "Jan Borysewicz, Prokop Marcin"
     },
     {
-        title: 'Prawdziwa Królowa. Elżbieta II',
+        title: 'prawdziwa królowa. elżbieta II',
         year: '2022',
         category: 'biografie',
         image: "https://ecsmedia.pl/c/prawdziwa-krolowa-elzbieta-ii-jakiej-nie-znamy-w-iext115603965.jpg",
@@ -56,7 +56,7 @@ const books = [
         author: "Marr Andrew"
     },
     {
-        title: 'Ania. Biografia Anny Przybylskiej',
+        title: 'ania. biografia anny przybylskiej',
         year: '2022',
         category: 'biografie',
         image: "https://ecsmedia.pl/c/ania-biografia-anny-przybylskiej-w-iext119858677.jpg",
