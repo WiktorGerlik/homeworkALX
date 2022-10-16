@@ -66,6 +66,17 @@ const books = [
 
   ];
 
+let daneJSON = localStorage.getItem("Books");
+let daneOBJ;
+                
+if(daneJSON == null){
+    daneOBJ = books;
+}
+else{
+    daneOBJ = JSON.parse(daneJSON);
+}
+
+
     const list = document.querySelector('#list');
 
     const searchForm = document.querySelector('#form');
@@ -178,6 +189,7 @@ const books = [
         };
 
         books.push(addBook);
+        localStorage.setItem("Books", daneJSON);
         //console.log(books);
 
         inputAddTitle.value = "";
