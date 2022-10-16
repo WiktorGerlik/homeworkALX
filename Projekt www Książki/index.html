@@ -13,12 +13,40 @@
     <nav>
         
       <a class="main_site_button" href="index.html"><h2>Strona główna</h2></a>
-      <form id="form">
-        <label for="inputSearch"></label>
-        <input class = "" type="text" id="inputSearch" name="inputSearch" placeholder="wpisz tytuł...">
-        <button type="submit" class="" id="btnSearch">Szukaj</button>
-      </form>
+      <div class="navContainer">
+        <div class="input__flex">
+          
+            <form id="form">
+              <label for="inputSearch"></label>
+              <input class = "" type="text" id="inputSearch" name="inputSearch" placeholder="wpisz tytuł...">
+              <button type="submit" class="" id="btnSearch">Szukaj</button>
+            </form>
         
+            <p id = "validator" class="display-none">Wpisz co najmniej 3 litery</p>
+            
+        </div>
+
+        <div class="formAdd">
+
+            <form id="addForm">
+              <label for="addTitle"></label>
+              <input class = "" type="text" id="addTitle" name="addTitle" placeholder="dodaj tytuł...">
+
+              <label for="addYear"></label>
+              <input class = "" type="text" id="addYear" name="addYear" placeholder="dodaj rok...">
+
+              <label for="addYear"></label>
+              <input class = "" type="text" id="addTitle" name="addTitle" placeholder="dodaj kategorię...">
+
+              <label for="addCategory"></label>
+              <input class = "" type="text" id="addTitle" name="addTitle" placeholder="dodaj tytuł...">
+
+              <button type="submit" class="" id="btnAdd">Dodaj książkę</button>
+            </form>
+            
+        </div>
+
+      </div>      
     </nav>
 
     <main>

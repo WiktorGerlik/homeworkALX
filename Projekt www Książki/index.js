@@ -94,9 +94,23 @@ const books = [
 
     const searchForm = document.querySelector('#form');
     const inputSearch = document.querySelector('#inputSearch');
+
+    const validateWriting = document.querySelector('#validator');
     
+    const validateForm = () => {
+        return inputSearch.value.length > 2;
+    }
+
     searchForm.addEventListener('submit', (event) => {
+        
         event.preventDefault();
+
+        validateWriting.className = "display-none";
+
+        const isValid = validateForm();
+        if(isValid!=true){//jeżeli nie jest valid to return
+            return validateWriting.className = "active";// spytać dlaczego jak tu jest return to działa a jak nie to zmienia klasę ale i tak wyszukuje 2 znaki
+        };
 
         const allShownSelect = list.querySelectorAll('div');
 
