@@ -66,38 +66,45 @@ const books = [
 
   ];
 
-  const list = document.querySelector('#list');
-
-  const showEntireList = (collection) => {
-    return collection.forEach(element => {
-    list.innerHTML += 
-    `
-    <div class="container">
-        <div class="container">
-            <img class="description" src=${element.image} alt=${element.alt}>
-        </div>
-        <div class="container_columns">
-            <p class="description">TYTUŁ:</br> ${element.title}</p>
-               
-            <p class="description">ROK:</br> ${element.year}</p>
-              
-            <p class="description">KATEGORIA:</br> ${element.category}</p>
-               
-            <p class="description">AUTOR:</br> ${element.author}</p>
-        </div>
-            
-    </div>`;
-    })
-} 
-
-    showEntireList (books);
+    const list = document.querySelector('#list');
 
     const searchForm = document.querySelector('#form');
     const inputSearch = document.querySelector('#inputSearch');
 
     const validateWriting = document.querySelector('#validator');
+
+    const addForm = document.querySelector('#addForm');
+    const inputAddTitle = document.querySelector('#addTitle');
+    const inputAddYear = document.querySelector('#addYear');
+    const inputAddCategory = document.querySelector('#addCategory');
+    const inputAddAuthor = document.querySelector('#addAuthor');
+    const inputAddSrc = document.querySelector('#addSrc');
+
+    const showEntireList = (collection) => {
+        return collection.forEach(element => {
+        list.innerHTML += 
+        `
+        <div class="container">
+            <div class="container">
+                <img class="book__cover" src=${element.image} alt=${element.alt}>
+            </div>
+            <div class="container_columns">
+                <p class="description">TYTUŁ:</br> ${element.title}</p>
+                
+                <p class="description">ROK:</br> ${element.year}</p>
+                
+                <p class="description">KATEGORIA:</br> ${element.category}</p>
+                
+                <p class="description">AUTOR:</br> ${element.author}</p>
+            </div>
+                
+        </div>`;
+        })
+    } 
+
+    showEntireList (books);
     
-    const validateForm = () => {
+    const validateForm = () => {//funkcja pomocnicza do walidacji
         return inputSearch.value.length > 2;
     }
 
@@ -112,13 +119,13 @@ const books = [
             return validateWriting.className = "active";// spytać dlaczego jak tu jest return to działa a jak nie to zmienia klasę ale i tak wyszukuje 2 znaki
         };
 
-        const allShownSelect = list.querySelectorAll('div');
+        const allShownSelect = list.querySelectorAll('div');//łapię i czyszczę wszystkie divy z html ID #list
 
-        allShownSelect.forEach(element => {
+        allShownSelect.forEach(element => {//łapię i czyszczę wszystkie divy z html ID #list
             element.remove();
         });
 
-        console.log(inputSearch.value);
+        //console.log(inputSearch.value);
 
 
         const filteredList = (collection, phrase) => {
@@ -127,13 +134,13 @@ const books = [
             });
         }
         const showFilteredArray = filteredList(books, inputSearch.value);//tablica z przefiltrowanymi tytułami
-        console.log(showFilteredArray);//zwraca tablicę obiektów w konsoli
+        //console.log(showFilteredArray);//zwraca tablicę obiektów w konsoli
         showFilteredArray.forEach(element => {    
                 list.innerHTML += 
                 `
                 <div class="container">
                     <div class="container">
-                        <img class="description" src=${element.image} alt=${element.alt}>
+                        <img class="book__cover" src=${element.image} alt=${element.alt}>
                     </div>
                     <div class="container_columns">
                         <p class="description">TYTUŁ:</br> ${element.title}</p>
@@ -148,6 +155,61 @@ const books = [
                 </div>`;
         });
         inputSearch.value = ""; 
+    })
+
+    addForm.addEventListener('submit', (event) => {
+        
+        event.preventDefault();
+
+        const allShownSelect = list.querySelectorAll('div');//łapię i czyszczę wszystkie divy z html ID #list
+
+        allShownSelect.forEach(element => {//łapię i czyszczę wszystkie divy z html ID #list
+            element.remove();
+        });
+
+        const addBook = 
+        {
+            title: inputAddTitle.value,
+            year: inputAddYear.value,
+            category: inputAddCategory.value,
+            image: inputAddSrc.value,
+            alt: 'Book1',
+            author: inputAddAuthor.value
+        };
+
+        books.push(addBook);
+        //console.log(books);
+
+        inputAddTitle.value = "";
+        inputAddYear.value = "";
+        inputAddCategory.value = "";
+        inputAddAuthor.value = "";
+        inputAddSrc.value = "";
+
+        const showExtendedList = (collection) => {
+            return collection.forEach(element => {
+            list.innerHTML += 
+            `
+            <div class="container">
+                <div class="container">
+                    <img class="book__cover" src=${element.image} alt=${element.alt}>
+                </div>
+                <div class="container_columns">
+                    <p class="description">TYTUŁ:</br> ${element.title}</p>
+                    
+                    <p class="description">ROK:</br> ${element.year}</p>
+                    
+                    <p class="description">KATEGORIA:</br> ${element.category}</p>
+                    
+                    <p class="description">AUTOR:</br> ${element.author}</p>
+                </div>
+                    
+            </div>`;
+            })
+        } 
+    
+        showExtendedList (books);
+
     })
 
     
