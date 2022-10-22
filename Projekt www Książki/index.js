@@ -65,18 +65,12 @@ const books = [
     },
 
   ];
-
-let daneJSON = localStorage.getItem("Books");
-let daneOBJ;
-                
-if(daneJSON == null){
-    daneOBJ = books;
-}
-else{
-    daneOBJ = JSON.parse(daneJSON);
-}
-
-
+  
+  let booksLibrary = JSON.parse(localStorage.getItem('books'));
+  
+  if(!booksLibrary) {
+    booksLibrary = books
+  }
     const list = document.querySelector('#list');
 
     const searchForm = document.querySelector('#form');
@@ -91,8 +85,11 @@ else{
     const inputAddAuthor = document.querySelector('#addAuthor');
     const inputAddSrc = document.querySelector('#addSrc');
 
-    const showEntireList = (collection) => {
-        return collection.forEach(element => {
+    const showList = (collection) => {
+
+        list.innerHTML = '';
+
+        collection.forEach(element => {
         list.innerHTML += 
         `
         <div class="container">
@@ -113,14 +110,15 @@ else{
         })
     } 
 
-    showEntireList (books);
+    //showEntireList (books);
+    //showEntireList (dodaneKsiazki);
     
     const validateForm = () => {//funkcja pomocnicza do walidacji
         return inputSearch.value.length > 2;
     }
 
-    searchForm.addEventListener('submit', (event) => {
-        
+    //const filterLibrary = searchForm.addEventListener('submit', (event) => {
+    const filterLibrary = event => {    
         event.preventDefault();
 
         validateWriting.className = "display-none";
@@ -130,55 +128,64 @@ else{
             return validateWriting.className = "active";// spytać dlaczego jak tu jest return to działa a jak nie to zmienia klasę ale i tak wyszukuje 2 znaki
         };
 
-        const allShownSelect = list.querySelectorAll('div');//łapię i czyszczę wszystkie divy z html ID #list
+        //const allShownSelect = list.querySelectorAll('div');//łapię i czyszczę wszystkie divy z html ID #list
 
-        allShownSelect.forEach(element => {//łapię i czyszczę wszystkie divy z html ID #list
-            element.remove();
-        });
-
-        //console.log(inputSearch.value);
+        //allShownSelect.forEach(element => {//łapię i czyszczę wszystkie divy z html ID #list
+        //     element.remove();
+        // });
 
 
-        const filteredList = (collection, phrase) => {
-            return collection.filter(element => {
-                return element.title.includes(phrase);
+        // const filteredList = (collection, phrase) => {
+        //     return collection.filter(element => {
+        //         return element.title.includes(phrase);
+        //     });
+        // }
+
+        const filteredList = booksLibrary.filter(element => {
+            return element.title.toLowerCase().includes(inputSearch.value.toLowerCase())
             });
-        }
-        const showFilteredArray = filteredList(books, inputSearch.value);//tablica z przefiltrowanymi tytułami
-        //console.log(showFilteredArray);//zwraca tablicę obiektów w konsoli
-        showFilteredArray.forEach(element => {    
-                list.innerHTML += 
-                `
-                <div class="container">
-                    <div class="container">
-                        <img class="book__cover" src=${element.image} alt=${element.alt}>
-                    </div>
-                    <div class="container_columns">
-                        <p class="description">TYTUŁ:</br> ${element.title}</p>
-                        
-                        <p class="description">ROK:</br> ${element.year}</p>
-                        
-                        <p class="description">KATEGORIA:</br> ${element.category}</p>
-                        
-                        <p class="description">AUTOR:</br> ${element.author}</p>
-                    </div>
-                        
-                </div>`;
-        });
-        inputSearch.value = ""; 
-    })
-
-    addForm.addEventListener('submit', (event) => {
         
+        showList(filteredList);
+        inputSearch.value = '';
+        
+        }//był jeszcze nawias )
+
+
+        //const showFilteredArray = filteredList(books, inputSearch.value);//tablica z przefiltrowanymi tytułami
+        //console.log(showFilteredArray);//zwraca tablicę obiektów w konsoli
+        //showFilteredArray.forEach(element => {    
+                //list.innerHTML += 
+    //             `
+    //             <div class="container">
+    //                 <div class="container">
+    //                     <img class="book__cover" src=${element.image} alt=${element.alt}>
+    //                 </div>
+    //                 <div class="container_columns">
+    //                     <p class="description">TYTUŁ:</br> ${element.title}</p>
+                        
+    //                     <p class="description">ROK:</br> ${element.year}</p>
+                        
+    //                     <p class="description">KATEGORIA:</br> ${element.category}</p>
+                        
+    //                     <p class="description">AUTOR:</br> ${element.author}</p>
+    //                 </div>
+                        
+    //             </div>`;
+    //     });
+    //     inputSearch.value = ""; 
+    // })
+
+    //const addToLibrary = addForm.addEventListener('submit', (event) => {
+    const addToLibrary = event => {    
         event.preventDefault();
 
-        const allShownSelect = list.querySelectorAll('div');//łapię i czyszczę wszystkie divy z html ID #list
+        // const allShownSelect = list.querySelectorAll('div');//łapię i czyszczę wszystkie divy z html ID #list
 
-        allShownSelect.forEach(element => {//łapię i czyszczę wszystkie divy z html ID #list
-            element.remove();
-        });
+        // allShownSelect.forEach(element => {//łapię i czyszczę wszystkie divy z html ID #list
+        //     element.remove();
+        // });
 
-        const addBook = 
+        const newBook = 
         {
             title: inputAddTitle.value,
             year: inputAddYear.value,
@@ -188,9 +195,9 @@ else{
             author: inputAddAuthor.value
         };
 
-        books.push(addBook);
-        localStorage.setItem("Books", daneJSON);
-        //console.log(books);
+        booksLibrary.push(newBook);
+        localStorage.setItem('books', JSON.stringify(booksLibrary));
+        showList(booksLibrary);
 
         inputAddTitle.value = "";
         inputAddYear.value = "";
@@ -198,33 +205,13 @@ else{
         inputAddAuthor.value = "";
         inputAddSrc.value = "";
 
-        const showExtendedList = (collection) => {
-            return collection.forEach(element => {
-            list.innerHTML += 
-            `
-            <div class="container">
-                <div class="container">
-                    <img class="book__cover" src=${element.image} alt=${element.alt}>
-                </div>
-                <div class="container_columns">
-                    <p class="description">TYTUŁ:</br> ${element.title}</p>
-                    
-                    <p class="description">ROK:</br> ${element.year}</p>
-                    
-                    <p class="description">KATEGORIA:</br> ${element.category}</p>
-                    
-                    <p class="description">AUTOR:</br> ${element.author}</p>
-                </div>
-                    
-            </div>`;
-            })
-        } 
-    
-        showExtendedList (books);
+    };//był jeszcze nawias )
 
-    })
+    showList (booksLibrary);
 
-    
+
+    searchForm.addEventListener('submit', filterLibrary);
+    addForm.addEventListener('submit', addToLibrary);
     
     
     
