@@ -1,0 +1,113 @@
+{
+  "books": [
+    {
+      "title": "baśniowa opowieść",
+      "year": "2022",
+      "category": "fantasy",
+      "image": "https://ecsmedia.pl/c/basniowa-opowiesc-w-iext117122105.jpg",
+      "alt": "Book1",
+      "author": "Stephen King"
+    },
+    {
+      "title": "the atlas six",
+      "year": "2022",
+      "category": "fantasy",
+      "image": "https://ecsmedia.pl/c/the-atlas-six-w-iext120077424.jpg",
+      "alt": "Book1",
+      "author": "Olivie Blake"
+    },
+    {
+      "title": "krew i popiół",
+      "year": "2022",
+      "category": "fantasy",
+      "image": "https://ecsmedia.pl/c/krew-i-popiol-tom-1-w-iext115531667.jpg",
+      "alt": "Book1",
+      "author": "Armentrout Jennifer L."
+    },
+    {
+      "title": "hobbit",
+      "year": "2014",
+      "category": "fantasy",
+      "image": "https://ecsmedia.pl/c/hobbit-w-iext117197058.jpg",
+      "alt": "Book1",
+      "author": "Tolkien John Ronald Reuel"
+    },
+    {
+      "title": "zbigniew ziobro. prawdziwe oblicze",
+      "year": "2022",
+      "category": "biografie",
+      "image": "https://ecsmedia.pl/c/zbigniew-ziobro-prawdziwe-oblicze-w-iext119920880.jpg",
+      "alt": "Book1",
+      "author": "Renata Grochal"
+    },
+    {
+      "title": "jan borysewicz. mniej obcy",
+      "year": "2022",
+      "category": "biografie",
+      "image": "https://ecsmedia.pl/c/jan-borysewicz-mniej-obcy-w-iext119879444.jpg",
+      "alt": "Book1",
+      "author": "Jan Borysewicz, Prokop Marcin"
+    },
+    {
+      "title": "prawdziwa królowa. elżbieta II",
+      "year": "2022",
+      "category": "biografie",
+      "image": "https://ecsmedia.pl/c/prawdziwa-krolowa-elzbieta-ii-jakiej-nie-znamy-w-iext115603965.jpg",
+      "alt": "Book1",
+      "author": "Marr Andrew"
+    },
+    {
+      "title": "ania. biografia anny przybylskiej",
+      "year": "2022",
+      "category": "biografie",
+      "image": "https://ecsmedia.pl/c/ania-biografia-anny-przybylskiej-w-iext119858677.jpg",
+      "alt": "Book1",
+      "author": "Kubicki Grzegorz, Drzewicki Maciej"
+    },
+    {
+      "id": "da8b073d-1616-45e6-840c-b021be6f7fc3",
+      "title": "Wielki Reset",
+      "year": "2022",
+      "category": "IT",
+      "image": "https://ecsmedia.pl/c/wielki-reset-w-iext120966803.jpg",
+      "alt": "Book1",
+      "author": "Einstein"
+    },
+    {
+      "id": "41ff93cc-ccab-4a1f-a6b7-410caa0ce760",
+      "title": "Wielki Reset",
+      "year": "2022",
+      "category": "IT",
+      "image": "https://ecsmedia.pl/c/wielki-reset-w-iext120966803.jpg",
+      "alt": "Book1",
+      "author": "Einstein"
+    },
+    {
+      "id": "37fba0bc-3fe0-449e-9645-4fbc37107b4b",
+      "title": "Wielki Reset",
+      "year": "2022",
+      "category": "IT",
+      "image": "https://ecsmedia.pl/c/wielki-reset-w-iext120966803.jpg",
+      "alt": "Book1",
+      "author": "Einstein"
+    },
+    {
+      "id": "7935b495-6798-4ba3-bb61-6436cc81f9ee",
+      "title": "test",
+      "year": "test",
+      "category": "test",
+      "image": "https://ecsmedia.pl/c/wielki-reset-w-iext120966803.jpg",
+      "alt": "Book1",
+      "author": "test"
+    },
+    {
+      "id": "1c664fd4-7d5d-4eb2-85fe-754e08c6b769",
+      "title": "test2",
+      "year": "test2",
+      "category": "test2",
+      "image": "https://ecsmedia.pl/c/wielki-reset-w-iext120966803.jpg",
+      "alt": "Book1",
+      "author": "test2"
+    }
+  ]
+}
