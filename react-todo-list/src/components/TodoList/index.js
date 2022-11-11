@@ -12,12 +12,32 @@ import { v4 as uuidv4 } from 'uuid';
 //     }
 // ];
 
+let storedTodos = [];
+
 function TodoList () {
     const [todoInputValue, setTodoInputValue] = useState('');//obsługa inputa
 
     //const [todoText, setTodoText] = useState('');//obsługa submitu
 
     const [todos, setTodos] = useState([]);
+
+    
+        const fetchTodos = () => {
+            fetch('http://localhost:8000/todos')
+            .then((response) => {
+              return response.json();
+            })
+            .then(data => {//todos tutaj wchodzą jako data
+              storedTodos = data//w tym kroku tablica wypełnia się todosami z serwera
+              setTodos(data);//gdy dostaniemy odpowiedź z serwera, wyświetli ksiązki na stronie
+            })
+            .catch(error => {
+            console.log(error.message)
+            })
+          }
+
+    
+     
 
     const handleTodoInputChange =  (event) => {
         event.preventDefault();
@@ -35,12 +55,13 @@ function TodoList () {
         //todos.push(newTodo); to nie jest pure function, bo zmienia wartości
         const newTodos = todos.concat(newTodo);//pure function, do starej tablicy dopisuje nowy obiekt
         setTodos(newTodos); //zastepuje tablice todos na setTodos         
-
+    
         setTodoInputValue('')
     }
     const handleRemoveTodos =  (event) => {
         setTodos([])
     }
+    fetchTodos()
 
 
 
@@ -60,7 +81,7 @@ function TodoList () {
             </form>
             {/* zamiana tablicy obiektów na listę: */}
             <ul>
-                {todos.map(todo => {return <li key={todo.id}>{todo.title} {todo.id}</li>})}
+                {todos.map(todo => {return <li key={todo.id}>{todo.title}</li>})}
             </ul>
             <button onClick={handleRemoveTodos}>Remove Todos</button>
         </div>

@@ -1,6 +1,7 @@
 {
   "todos": [
     {
+      "id": "1c664fd4-7d5d-4eb2-85fe-76b769",
       "title": "baśniowaa opowieść",
       "year": "2022",
       "category": "fantasy",
@@ -9,6 +10,7 @@
       "author": "Stephen King"
     },
     {
+      "id": "1c664fd4-7d5d-4eb2-85fe-754b769",
       "title": "the atlas six",
       "year": "2022",
       "category": "fantasy",
@@ -17,6 +19,7 @@
       "author": "Olivie Blake"
     },
     {
+      "id": "1fd4-7d5d-4eb2-85fe-754e08c6b769",
       "title": "krew i popiół",
       "year": "2022",
       "category": "fantasy",
@@ -25,6 +28,7 @@
       "author": "Armentrout Jennifer L."
     },
     {
+      "id": "1c66fd4-7d5d-4eb2-85fe-754e08c6b769",
       "title": "hobbit",
       "year": "2014",
       "category": "fantasy",
@@ -33,6 +37,7 @@
       "author": "Tolkien John Ronald Reuel"
     },
     {
+      "id": "1c664fd4-7d-4eb2-85fe-754e08c6b769",
       "title": "zbigniew ziobro. prawdziwe oblicze",
       "year": "2022",
       "category": "biografie",
@@ -41,6 +46,7 @@
       "author": "Renata Grochal"
     },
     {
+      "id": "1c664fd4-7d5d-4eb2-85fe-754e8c6b769",
       "title": "jan borysewicz. mniej obcy",
       "year": "2022",
       "category": "biografie",
@@ -49,6 +55,7 @@
       "author": "Jan Borysewicz, Prokop Marcin"
     },
     {
+      "id": "1c664fd4-7d5d-4eb2-85e-754e08c6b769",
       "title": "prawdziwa królowa. elżbieta II",
       "year": "2022",
       "category": "biografie",
@@ -57,6 +64,7 @@
       "author": "Marr Andrew"
     },
     {
+      "id": "1c664fd4-7d5d-4e2-85fe-754e08c6b769",
       "title": "ania. biografia anny przybylskiej",
       "year": "2022",
       "category": "biografie",
